@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import Dashboard from "../Pages/dashboard";
 import Contacts from './../Pages/Contacts';
 import Invoices from './../Pages/Invoices';
 import ProfileForm from './../Pages/ProfileForm';
@@ -11,6 +10,7 @@ import LineCharts from './../Pages/LineCharts';
 import GeographyCharts from './../Pages/GeographyCharts';
 import BarCharts from './../Pages/BarCharts';
 import Team from './../Pages/Team/Team';
+import Dashboard from './../Pages/Dashboard';
 
 const routes = createBrowserRouter([
     {
