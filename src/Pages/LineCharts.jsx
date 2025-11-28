@@ -7,7 +7,7 @@ import { ResponsiveLine } from '@nivo/line'
 import React from 'react'
 import SectionHeader from '../Components/SectionHeader';
 
-export default function LineCharts() {
+export default function LineCharts({isDashboard}) {
 
 
     let data = [
@@ -284,7 +284,7 @@ export default function LineCharts() {
 
     return (
       <>
-                      <SectionHeader heading={"Line Chart"} desc={"Simple Line Chart Example"} />
+                      { isDashboard ? "" : <SectionHeader heading={"Line Chart"} desc={"Simple Line Chart Example"} />}
 
         <Box sx={{height:" 75vh" , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:1}}>
             <ResponsiveLine 

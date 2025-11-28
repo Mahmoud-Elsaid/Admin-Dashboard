@@ -36,7 +36,7 @@ const Row3 = () => {
         >
           <Typography
             variant="h5"
-            color={appTheme.palette.info.main}
+            color={appTheme.palette.secondary.main}
             fontWeight={"bold"}
           >
             Campaign
@@ -51,7 +51,7 @@ const Row3 = () => {
             sx={{ textDecoration: "none"  , flexGrow: 1, p: 2, minWidth: {sm:"100%" , md:"33%"} }}>
           <Typography
             variant="h5"
-            color={appTheme.palette.info.main}
+            color={appTheme.palette.secondary.main}
             fontWeight={"bold"}
           >
             Sales Quantity
@@ -77,7 +77,7 @@ const Row3 = () => {
               <Typography
                 variant="h5"
                 marginBottom={2}
-                color={appTheme.palette.info.main}
+                color={appTheme.palette.secondary.main}
                 fontWeight={"bold"}
                 sx={{ textDecoration: "none", color: appTheme.palette.secondary.main }} 
                 >

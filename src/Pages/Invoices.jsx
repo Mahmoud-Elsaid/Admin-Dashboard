@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { TailwindDemoContainer } from "@mui/x-data-grid/internals";
 import { Box } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../Firebase/Firebase"; // هنا ضع ملف إعدادات Firebase
+import { db } from "../Firebase/Firebase"; 
 import SectionHeader from "../Components/SectionHeader";
 
 export default function Invoices() {
@@ -12,7 +12,7 @@ export default function Invoices() {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "users"));
+        const querySnapshot = await getDocs(collection(db, "Invoices"));
         const data = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
@@ -27,20 +27,19 @@ export default function Invoices() {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 60 },
-    { field: "registerId", headerName: "Register ID", width: 140 },
-    { field: "name", headerName: "Name", flex: 1 },
-    { field: "age", headerName: "Age", width: 60 },
-    { field: "phone", headerName: "Phone", width: 160 },
-    { field: "email", headerName: "Email", flex: 1, renderCell: (params) => <a href={`mailto:${params.value}`} style={{ color: "#1976d2" }}>{params.value}</a> },
-    { field: "address", headerName: "Address", flex: 1 },
-    { field: "city", headerName: "City", width: 130 },
-    { field: "zipCode", headerName: "Zip Code", width: 120 }
+    { field: "id", headerName: "ID", width: 60 ,  headerAlign: "center", align: "center"},
+    { field: "name", headerName: "Name", flex: 1 , headerAlign: "center", align: "center"},
+    { field: "phoneNumber", headerName: "Phone", width: 160 , flex: 1 , headerAlign: "center", align: "center"},
+    { field: "email", headerName: "Email", flex: 1, headerAlign: "center", align: "center" , renderCell: (params) => <a href={`mailto:${params.value}`} style={{ color: "#1976d2" }}>{params.value}</a> },
+    {field: "cost" , headerName: "Cost" ,  flex: 1 ,headerAlign: "center", align: "center"},
+    {field: "date" , headerName: "Date" , flex:1 , headerAlign: "center", align: "center"}
   ];
+
+          {console.log(rows)}
 
   return (
     <Box sx={{ height: 600, width: "98%", mx: "auto", p: 1 }}>
-        <SectionHeader heading={"Invoices"} desc={"Invoices"} />
+        <SectionHeader heading={"Invoices Balances"} desc={"Some of our Invoices Balances "} />
 
       <TailwindDemoContainer>
         <DataGrid

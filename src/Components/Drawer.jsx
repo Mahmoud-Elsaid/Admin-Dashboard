@@ -45,7 +45,7 @@ import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import { Avatar } from '@mui/material';
+import { Avatar, Tooltip } from '@mui/material';
 import { useLocation, useNavigate } from "react-router-dom";
 
 
@@ -408,56 +408,70 @@ export default function MiniDrawer({children}) {
                               <List>
                                   {group1.map((item) => (
                                       <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
-                                      <ListItemButton
-                                      onClick={()=> navigate(item.path) }
-                                      
-                                          sx={[
-                                          {
-                                              maxHeight: 40,
-                                              px: 2.5,
-                                              bgcolor: location.pathname === `/${item.path}`  ? colorThemeMode ==="dark" ? "gray" : "#989898" : ""
-                                              
-                                          },
-                                          open
-                                              ? {
-                                                  justifyContent: 'initial',
-                                              }
-                                              : {
-                                                  justifyContent: 'center',
-                                              },
-                                          ]}
-                                      >
+                                        <Tooltip  title={open?null:item.text} slotProps={{
+                                                              popper: {
+                                                                modifiers: [
+                                                                  {
+                                                                    name: 'offset',
+                                                                    options: {
+                                                                      offset: [40, -60],
+                                                                    },
+                                                                  },
+                                                                ],
+                                                              },
+                                                            }} >
+                                                  <ListItemButton
+                                            onClick={()=> navigate(item.path) }
+                                            
+                                                sx={[
+                                                {
+                                                    maxHeight: 40,
+                                                    px: 2.5,
+                                                    bgcolor: location.pathname === `/${item.path}`  ? colorThemeMode ==="dark" ? "gray" : "#989898" : ""
+                                                    
+                                                },
+                                                open
+                                                    ? {
+                                                        justifyContent: 'initial',
+                                                    }
+                                                    : {
+                                                        justifyContent: 'center',
+                                                    },
+                                                ]}
+                                            >
 
-                                          <ListItemIcon
-                                          sx={[
-                                              {
-                                              minWidth: 0,
-                                              justifyContent: 'center',
-                                              },
-                                              open
-                                              ? {
-                                                  mr: 3,
-                                                  }
-                                              : {
-                                                  mr: 'auto',
-                                                  },
-                                          ]}
-                                          >
-                                          {<item.icon/>}
-                                          </ListItemIcon>
-                                          <ListItemText
-                                          primary={item.text}
-                                          sx={[
-                                              open
-                                              ? {
-                                                  opacity: 1,
-                                                  }
-                                              : {
-                                                  opacity: 0,
-                                                  },
-                                          ]}
-                                          />
-                                      </ListItemButton>
+                                                <ListItemIcon
+                                                sx={[
+                                                    {
+                                                    minWidth: 0,
+                                                    justifyContent: 'center',
+                                                    },
+                                                    open
+                                                    ? {
+                                                        mr: 3,
+                                                        }
+                                                    : {
+                                                        mr: 'auto',
+                                                        },
+                                                ]}
+                                                >
+                                                {<item.icon/>}
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                primary={item.text}
+                                                sx={[
+                                                    open
+                                                    ? {
+                                                        opacity: 1,
+                                                        }
+                                                    : {
+                                                        opacity: 0,
+                                                        },
+                                                ]}
+                                                />
+                                                  </ListItemButton>
+                                        </Tooltip >
+                                      
                                       </ListItem>
                                   ))}
                               </List>
@@ -467,52 +481,66 @@ export default function MiniDrawer({children}) {
                               <List>
                                     {group2.map((item) => (
                                         <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
-                                        <ListItemButton
-                                            onClick={()=> navigate(item.path) }
-                                            sx={[
-                                            {
-                                                maxHeight: 40,
-                                                px: 2.5,
-                                            },
-                                            open
-                                                ? {
-                                                    justifyContent: 'initial',
-                                                }
-                                                : {
-                                                    justifyContent: 'center',
-                                                },
-                                            ]}
-                                        >
-                                            <ListItemIcon
-                                            sx={[
-                                                {
-                                                minWidth: 0,
-                                                justifyContent: 'center',
-                                                },
-                                                open
-                                                ? {
-                                                    mr: 3,
-                                                    }
-                                                : {
-                                                    mr: 'auto',
-                                                    },
-                                            ]}
-                                            >
-                                            {<item.icon/>}
-                                            </ListItemIcon>
-                                            <ListItemText
-                                            primary={item.text}
-                                            sx={[
-                                                open
-                                                ? {
-                                                    opacity: 1,
-                                                    }
-                                                : {
-                                                    opacity: 0,
-                                                    },
-                                            ]}
-                                            />
-                                        </ListItemButton>
+                                          <Tooltip  title={open?null:item.text} slotProps={{
+                                                              popper: {
+                                                                modifiers: [
+                                                                  {
+                                                                    name: 'offset',
+                                                                    options: {
+                                                                      offset: [40, -60],
+                                                                    },
+                                                                  },
+                                                                ],
+                                                              },
+                                                            }}  >
+                                                  <ListItemButton
+                                                  onClick={()=> navigate(item.path) }
+                                                  sx={[
+                                                  {
+                                                      maxHeight: 40,
+                                                      px: 2.5,
+                                                  },
+                                                  open
+                                                      ? {
+                                                          justifyContent: 'initial',
+                                                      }
+                                                      : {
+                                                          justifyContent: 'center',
+                                                      },
+                                                  ]}
+                                              >
+                                                  <ListItemIcon
+                                                  sx={[
+                                                      {
+                                                      minWidth: 0,
+                                                      justifyContent: 'center',
+                                                      },
+                                                      open
+                                                      ? {
+                                                          mr: 3,
+                                                          }
+                                                      : {
+                                                          mr: 'auto',
+                                                          },
+                                                  ]}
+                                                  >
+                                                  {<item.icon/>}
+                                                  </ListItemIcon>
+                                                  <ListItemText
+                                                  primary={item.text}
+                                                  sx={[
+                                                      open
+                                                      ? {
+                                                          opacity: 1,
+                                                          }
+                                                      : {
+                                                          opacity: 0,
+                                                          },
+                                                  ]}
+                                                  />
+                                                  </ListItemButton>
+                                          </Tooltip >
+                                        
                                         </ListItem>
                                     ))}
                               </List>
@@ -524,52 +552,66 @@ export default function MiniDrawer({children}) {
                                 <List>
                                     {group3.map((item) => (
                                         <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
-                                        <ListItemButton
-                                            onClick={()=> navigate(item.path) }
-                                            sx={[
-                                            {
-                                                maxHeight: 40,
-                                                px: 2.5,
-                                            },
-                                            open
-                                                ? {
-                                                    justifyContent: 'initial',
-                                                }
-                                                : {
-                                                    justifyContent: 'center',
-                                                },
-                                            ]}
-                                        >
-                                            <ListItemIcon
-                                            sx={[
-                                                {
-                                                minWidth: 0,
-                                                justifyContent: 'center',
-                                                },
-                                                open
-                                                ? {
-                                                    mr: 3,
-                                                    }
-                                                : {
-                                                    mr: 'auto',
+                                          <Tooltip  title={open?null:item.text} slotProps={{
+                                                              popper: {
+                                                                modifiers: [
+                                                                  {
+                                                                    name: 'offset',
+                                                                    options: {
+                                                                      offset: [40, -60],
+                                                                    },
+                                                                  },
+                                                                ],
+                                                              },
+                                                            }} >
+                                                    <ListItemButton
+                                                    onClick={()=> navigate(item.path) }
+                                                    sx={[
+                                                    {
+                                                        maxHeight: 40,
+                                                        px: 2.5,
                                                     },
-                                            ]}
-                                            >
-                                            {<item.icon/>}
-                                            </ListItemIcon>
-                                            <ListItemText
-                                            primary={item.text}
-                                            sx={[
-                                                open
-                                                ? {
-                                                    opacity: 1,
-                                                    }
-                                                : {
-                                                    opacity: 0,
-                                                    },
-                                            ]}
-                                            />
-                                        </ListItemButton>
+                                                    open
+                                                        ? {
+                                                            justifyContent: 'initial',
+                                                        }
+                                                        : {
+                                                            justifyContent: 'center',
+                                                        },
+                                                    ]}
+                                                >
+                                                    <ListItemIcon
+                                                    sx={[
+                                                        {
+                                                        minWidth: 0,
+                                                        justifyContent: 'center',
+                                                        },
+                                                        open
+                                                        ? {
+                                                            mr: 3,
+                                                            }
+                                                        : {
+                                                            mr: 'auto',
+                                                            },
+                                                    ]}
+                                                    >
+                                                    {<item.icon/>}
+                                                    </ListItemIcon>
+                                                    <ListItemText
+                                                    primary={item.text}
+                                                    sx={[
+                                                        open
+                                                        ? {
+                                                            opacity: 1,
+                                                            }
+                                                        : {
+                                                            opacity: 0,
+                                                            },
+                                                    ]}
+                                                    />
+                                                    </ListItemButton>
+                                          </Tooltip >
+                                        
                                         </ListItem>
                                     ))}
                                 </List>

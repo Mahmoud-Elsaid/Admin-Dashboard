@@ -7,7 +7,7 @@ import { ResponsivePie } from '@nivo/pie'
 import SectionHeader from '../Components/SectionHeader';
 
 
-export default function PieCharts() {
+export default function PieCharts({isDashboard}) {
 
     const theme = useTheme();
 
@@ -47,7 +47,7 @@ export default function PieCharts() {
     return (
 
         <>
-            <SectionHeader heading={"Pie Chart"} desc={"Simple Pie Chart"} />
+            {isDashboard ? "" :<SectionHeader heading={"Pie Chart"} desc={"Simple Pie Chart"} />}
 
             <Box sx={{height:" 75vh" , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:1}}>
                 <ResponsivePie 

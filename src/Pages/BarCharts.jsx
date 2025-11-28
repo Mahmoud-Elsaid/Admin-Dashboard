@@ -7,7 +7,7 @@ import { ResponsiveBar } from '@nivo/bar'
 import { Box, useTheme } from '@mui/material';
 import SectionHeader from '../Components/SectionHeader';
 
-export default function BarCharts() {
+export default function BarCharts({isDashboard}) {
 
 
     const data = [
@@ -63,9 +63,9 @@ export default function BarCharts() {
     return (
 
         <>
-                        <SectionHeader heading={"Bar Chart"} desc={"The minimum wage in Germany, France and Spain (EUR/month)"} />
+                        { isDashboard ? "" : <SectionHeader heading={"Bar Chart"} desc={"The minimum wage in Germany, France and Spain (EUR/month)"} />}
 
-        <Box sx={{height:" 85vh" , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:1}}>
+        <Box sx={{height: isDashboard?" 75vh":" 85vh" , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:1}}>
             <ResponsiveBar 
                     data={data}
                     theme={{

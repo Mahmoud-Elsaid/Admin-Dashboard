@@ -164,7 +164,6 @@ const ProfileForm = () => {
             <FormControl variant="filled">
             <InputLabel>Role</InputLabel>
             <Select value={role} onChange={(e) => setRole(e.target.value)}>
-                <MenuItem value=""><em>None</em></MenuItem>
                 <MenuItem value="user">User</MenuItem>
                 <MenuItem value="admin">Admin</MenuItem>
                 <MenuItem value="manager">Manager</MenuItem>

@@ -707,10 +707,10 @@ export default function GeographyCharts({isDashboard}) {
 
     return (
       <>
-                      <SectionHeader heading={"Geography Chart"} desc={"Simple Geography Chart Example"} />
+                      {isDashboard ? "" : <SectionHeader heading={"Geography Chart"} desc={"Simple Geography Chart Example"} />}
 
         <Box
-            sx={{height:" 95vh" , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:5}}
+            sx={{height: isDashboard?"75vh": "95vh"  , border:`2px solid ${theme.palette.divider}`, borderRadius:2 , padding:5}}
         >
           
             <ResponsiveChoropleth
