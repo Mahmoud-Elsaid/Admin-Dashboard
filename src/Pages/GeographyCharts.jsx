@@ -9,7 +9,7 @@ import React from 'react'
 import { geo } from './../Components/Geo';
 import SectionHeader from '../Components/SectionHeader';
 
-export default function GeographyCharts() {
+export default function GeographyCharts({isDashboard}) {
 
 
 
@@ -728,7 +728,7 @@ export default function GeographyCharts() {
                 borderWidth={0.5}
 
                 borderColor="#00000033"
-                legends={[
+                legends={isDashboard ?[] :[
             {
                 anchor: 'bottom-left',
                 direction: 'column',

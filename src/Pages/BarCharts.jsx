@@ -13,21 +13,21 @@ export default function BarCharts() {
     const data = [
             {
             country: "Germany",
-            wage: 2000,
+            wage: 1350,
             housing: 700,
             food: 400,
             transport: 300,
             },
             {
             country: "France",
-            wage: 1900,
+            wage: 1230,
             housing: 650,
             food: 380,
             transport: 250,
             },
             {
             country: "Spain",
-            wage: 1600,
+            wage: 1300,
             housing: 550,
             food: 320,
             transport: 200,
@@ -35,20 +35,20 @@ export default function BarCharts() {
 
             {
             country: "england",
-            wage: 2000,
+            wage: 1100,
             housing: 700,
             food: 400,
             transport: 300,
             },
             {
             country: "Egypt",
-            wage: 1900,
+            wage: 1400,
             housing: 650,
-            food: 380,
-            transport: 250,
+            food: 580,
+            transport: 550,
             },
             {
-            country: "Italia",
+            country: "italy",
             wage: 1600,
             housing: 550,
             food: 320,

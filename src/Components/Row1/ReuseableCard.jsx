@@ -12,19 +12,19 @@ const ReuseableCard = ({ icon, text1, subtitle, scheme, chartTitle }) => {
       id: "hack",
       label: "hack",
       value: 74,
-      color: "hsl(114, 70%, 50%)",
+      color: "hsla(114, 86%, 19%, 1.00)",
     },
     {
       id: "python",
       label: "python",
       value: 118,
-      color: "hsl(330, 70%, 50%)",
+      color: "hsla(330, 69%, 38%, 1.00)",
     },
     {
       id: "javascript",
       label: "javascript",
       value: 237,
-      color: "hsl(232, 70%, 50%)",
+      color: "hsla(232, 81%, 19%, 1.00)",
     },
     {
       id: "elixir",
@@ -64,13 +64,14 @@ const ReuseableCard = ({ icon, text1, subtitle, scheme, chartTitle }) => {
           <Box sx={{ width: "70px", height: "70px" }}>
             <ResponsivePie
               data={data}
+              
               margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
               innerRadius={0.5}
               padAngle={0.6}
-              cornerRadius={2}
+              cornerRadius={1}
               activeOuterRadiusOffset={8}
               enableArcLinkLabels={false}
-              enableArcLabels={false}
+              enableArcLabels={true}
               arcLinkLabelsSkipAngle={10}
               arcLinkLabelsTextColor="#333333"
               arcLinkLabelsThickness={2}

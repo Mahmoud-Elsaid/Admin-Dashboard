@@ -4,6 +4,7 @@
 import { Box, Button, Paper, Typography, useTheme } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import LineChart from "../../Pages/LineCharts";
+import { Link } from "react-router-dom";
 const Row2 = () => {
   const appTheme = useTheme();
   return (
@@ -18,7 +19,10 @@ const Row2 = () => {
         }}
       >
         <Paper
+            component={Link}          
+            to="/lineCharts"
           sx={{
+              textDecoration: "none", 
             flexGrow: 1,
             p:1,
             minWidth: "500px",

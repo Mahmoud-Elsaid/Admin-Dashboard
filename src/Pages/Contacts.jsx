@@ -162,19 +162,7 @@ export default function Contacts() {
     { field: "address", headerName: "Address", flex: 1 },
     { field: "city", headerName: "City", width: 130 },
     { field: "zipCode", headerName: "Zip Code", width: 120 },
-    {
-      field: "actions",
-      headerName: "Actions",
-      width: 120,
-      renderCell: (params) => (
-        <Button
-          onClick={() => handleDelete(params.id)}
-          className="bg-red-500 text-white hover:bg-red-600"
-        >
-          Delete
-        </Button>
-      ),
-    },
+    
   ];
 
   return (
