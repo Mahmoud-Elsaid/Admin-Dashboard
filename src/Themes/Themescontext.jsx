@@ -13,7 +13,7 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from "@mui/material/st
 
 export const ThemeContextProvider = ({ children }) => {
     const [colorThemeMode, setColorThemeMode] = useState(
-        localStorage.getItem("themeMode") || "light"
+        localStorage.getItem("themeMode") || "dark"
     );
 
     const toggleTheme = () => {
